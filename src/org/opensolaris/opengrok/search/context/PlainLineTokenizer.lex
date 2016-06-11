@@ -257,6 +257,11 @@ import org.opensolaris.opengrok.analysis.Scopes.Scope;
         if (matchStart == -1) {
                 matchStart = markedContents.length() - yylength();
         }
+        
+        if (scopes != null) {
+                Scope scope = scopes.getScope(markedLine-1);
+                hit.setScope(scope.getName());
+        }
 
         if (curLinePos == markedPos) {
                 Integer ln = Integer.valueOf(markedLine);
@@ -329,6 +334,7 @@ import org.opensolaris.opengrok.analysis.Scopes.Scope;
                                 Scope scope = null;
                                 if (scopes != null) {
                                     scope = scopes.getScope(markedLine-1);
+                                    hit.setScope(scope.getName());
                                 }
                                 if (scope != null && scope != scopes.getScope(-1)) {
                                     out.write(" <a class=\"scope\" href=\"");
@@ -424,6 +430,7 @@ Printable = [\@\$\%\^\&\-+=\?\.\:]
                            Scope scope = null;
                            if (scopes != null) {
                                scope = scopes.getScope(markedLine-1);
+                               hit.setScope(scope.getName());
                            }
                            if (scope != null && scope != scopes.getScope(-1)) {
                                out.write(" <a class=\"scope\" href=\"");

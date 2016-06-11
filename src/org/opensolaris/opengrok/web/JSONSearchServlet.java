@@ -50,6 +50,7 @@ public class JSONSearchServlet extends HttpServlet {
     private static final String ATTRIBUTE_DIRECTORY = "directory";
     private static final String ATTRIBUTE_FILENAME = "filename";
     private static final String ATTRIBUTE_LINENO = "lineno";
+    private static final String ATTRIBUTE_SCOPE = "scope";
     private static final String ATTRIBUTE_LINE = "line";
     private static final String ATTRIBUTE_PATH = "path";
     private static final String ATTRIBUTE_RESULTS = "results";
@@ -132,6 +133,7 @@ public class JSONSearchServlet extends HttpServlet {
                 hitJson.put(ATTRIBUTE_LINENO, hit.getLineno());
                 hitJson.put(ATTRIBUTE_LINE, conv.encode(hit.getLine()));
                 hitJson.put(ATTRIBUTE_PATH, hit.getPath());
+                hitJson.put(ATTRIBUTE_SCOPE, hit.getScope());
                 resultsArray.add(hitJson);
             }
 

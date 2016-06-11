@@ -51,6 +51,11 @@ public class Hit implements Comparable<Hit> {
      * Holds value of property line no.
      */
     private String lineno;
+    
+    /**
+     * Holds value of property scope
+     */
+    private String scope;
 
     /**
      * Holds value of property binary.
@@ -169,6 +174,24 @@ public class Hit implements Comparable<Hit> {
      */
     public void setLineno(String lineno) {
         this.lineno = lineno;
+    }
+    
+    /**
+     * Getter for property scope
+     *
+     * @return Value of property scope
+     */
+    public String getScope() {
+        return this.scope;
+    }
+
+    /**
+     * Setter for property line no.
+     *
+     * @param scope New value of property scope
+     */
+    public void setScope(String scope) {
+        this.scope = scope;
     }
 
     /**

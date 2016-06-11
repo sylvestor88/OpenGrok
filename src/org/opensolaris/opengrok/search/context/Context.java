@@ -277,7 +277,7 @@ public class Context {
             String token;
             int matchState = LineMatcher.NOT_MATCHED;
             int matchedLines = 0;
-            while ((token = tokens.yylex()) != null && (!lim || matchedLines < 10)) {
+            while ((token = tokens.yylex()) != null) {
                 for (int i = 0; i < m.length; i++) {
                     matchState = m[i].match(token);
                     if (matchState == LineMatcher.MATCHED) {
